@@ -51,7 +51,7 @@ class IMXOV5645Node(Node):
         self.declare_parameter("resolution", [320, 240], 
             resolution_array_descriptor)
 
-        self.declare_parameter("framerate", 15,
+        self.declare_parameter("framerate", 30,
             framerate_descriptor)
 
         self.declare_parameter("device", "/dev/video3", 
