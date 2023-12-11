@@ -92,7 +92,7 @@ class IMXOV5645Node(Node):
         msgInf.distortion_model = "plumb_bob"
         msgInf.k = [381.5, 0.0, 320.0, 0.0, 381.5, 240.0, 0.0, 0.0, 1.0]
         msgInf.r = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
-        msgInf.p = [381.5, 0.0, 320.0, 0.0, 381.5, 240.0, 0.0, 0.0, 1.0]
+        msgInf.p = [381.5, 0.0, 320.0, 0.0, 0.0, 381.5, 240.0, 0.0, 0.0, 0.0, 1.0, 0.0]
 
         while(self.videoCapture.isOpened()):
             ret, frame = self.videoCapture.read()
