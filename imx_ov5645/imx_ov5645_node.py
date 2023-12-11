@@ -48,10 +48,10 @@ class IMXOV5645Node(Node):
         self.declare_parameter("camera_info_topic", "/ov5645/camera_info", 
             camera_info_topic_descriptor)
 
-        self.declare_parameter("resolution", [640, 480], 
+        self.declare_parameter("resolution", [320, 240], 
             resolution_array_descriptor)
 
-        self.declare_parameter("framerate", 30, 
+        self.declare_parameter("framerate", 15,
             framerate_descriptor)
 
         self.declare_parameter("device", "/dev/video3", 
@@ -90,9 +90,9 @@ class IMXOV5645Node(Node):
         msgInf.height = self.resolution[1]
         msgInf.width = self.resolution[0]
         msgInf.distortion_model = "plumb_bob"
-        msgInf.k = [381.5, 0.0, 320.0, 0.0, 381.5, 240.0, 0.0, 0.0, 1.0]
+        msgInf.k = [381.5, 0.0, 160.0, 0.0, 381.5, 120.0, 0.0, 0.0, 1.0]
         msgInf.r = [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
-        msgInf.p = [381.5, 0.0, 320.0, 0.0, 0.0, 381.5, 240.0, 0.0, 0.0, 0.0, 1.0, 0.0]
+        msgInf.p = [381.5, 0.0, 160.0, 0.0, 0.0, 381.5, 120.0, 0.0, 0.0, 0.0, 1.0, 0.0]
 
         while(self.videoCapture.isOpened()):
             ret, frame = self.videoCapture.read()
